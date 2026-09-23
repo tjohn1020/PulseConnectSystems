@@ -1,14 +1,19 @@
-body::before {
-  content: "";
-  display: block;
-  height: 60px;
+/* Push page content below the fixed-top navbar */
+body {
+  padding-top: 76px;
 }
 
-@media(min-width: 768px) {
+/* Keep anchor links (About, Services, etc.) from landing under the navbar */
+html {
+  scroll-padding-top: 76px;
+}
+
+@media (min-width: 768px) {
   .news-input {
     width: 50%;
   }
 }
+
 :root {
   --brand: #4945fe;
   --brand-dark: #332fd0;
