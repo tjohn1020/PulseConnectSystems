@@ -1,11 +1,12 @@
 /* Push page content below the fixed-top navbar */
 body {
-  padding-top: 196px;
+  padding-top: 230px;
+  background-color: #212529;
 }
 
 /* Keep anchor links (About, Services, etc.) from landing under the navbar */
 html {
-  scroll-padding-top: 196px;
+  scroll-padding-top: 230px;
 }
 
 @media (min-width: 768px) {
