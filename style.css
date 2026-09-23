@@ -1,11 +1,11 @@
 /* Push page content below the fixed-top navbar */
 body {
-  padding-top: 106px;
+  padding-top: 196px;
 }
 
 /* Keep anchor links (About, Services, etc.) from landing under the navbar */
 html {
-  scroll-padding-top: 106px;
+  scroll-padding-top: 196px;
 }
 
 @media (min-width: 768px) {
