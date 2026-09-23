@@ -38,3 +38,7 @@ html {
 .text-brand {
   color: var(--brand) !important;
 }
+
+.service-card {
+  min-height: 430px;
+}
