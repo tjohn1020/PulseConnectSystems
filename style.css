@@ -1,12 +1,311 @@
 /* Push page content below the fixed-top navbar */
-body {
-  padding-top: 230px;
-  background-color: #212529;
+/* Keep anchor links (About, Services, etc.) from landing under the navbar */
+@media (min-width: 768px) {
+  .news-input {
+    width: 50%;
+  }
+}
+:root {
+  --brand: #146ef5;
+  --brand-dark: #0b4db3;
+  --ink: #172033;
+  --muted: #667085;
+  --surface: #f4f7fb;
+  --line: #dbe4ef;
+  --night: #111827;
+  --cyan: #39d0ff;
 }
 
-/* Keep anchor links (About, Services, etc.) from landing under the navbar */
+* {
+  box-sizing: border-box;
+}
+
 html {
+  scroll-behavior: smooth;
   scroll-padding-top: 230px;
+}
+
+body {
+  padding-top: 230px;
+  background: var(--night);
+  color: var(--ink);
+  font-family: "Manrope", sans-serif;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+.navbar-brand {
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.navbar {
+  background: rgba(17, 24, 39, 0.97) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 12px 30px rgba(10, 19, 35, 0.16);
+}
+
+.navbar-brand img {
+  display: block;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.18));
+}
+
+.navbar-nav {
+  gap: 0.35rem;
+}
+
+.navbar .nav-link {
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.72) !important;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.65rem 1rem !important;
+  text-transform: uppercase;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  background: rgba(57, 208, 255, 0.13);
+  color: #ffffff !important;
+}
+
+.hero-section {
+  background-color: var(--night) !important;
+  background-image: linear-gradient(135deg, rgba(20, 110, 245, 0.22), transparent 42%), linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px) !important;
+  background-size: auto, 42px 42px, 42px 42px;
+  min-height: 420px;
+  padding-bottom: 6rem !important;
+  padding-top: 5.5rem !important;
+}
+
+.hero-section h1 {
+  font-size: clamp(2.7rem, 6vw, 5.4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+  max-width: 800px;
+}
+
+.hero-section h1 .text-warning {
+  color: var(--cyan) !important;
+}
+
+.hero-section p {
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 720px;
+}
+
+.bg-brand {
+  background-color: var(--brand) !important;
+}
+
+.btn {
+  border-radius: 999px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-brand {
+  background-color: var(--brand) !important;
+  border-color: var(--brand) !important;
+  box-shadow: 0 10px 22px rgba(20, 110, 245, 0.24);
+  color: #ffffff !important;
+}
+
+.btn-brand:hover {
+  background-color: var(--brand-dark) !important;
+  border-color: var(--brand-dark) !important;
+  box-shadow: 0 14px 28px rgba(20, 110, 245, 0.3);
+}
+
+.text-brand {
+  color: var(--brand) !important;
+}
+
+#services,
+#about,
+#questions,
+#contact {
+  background-color: #ffffff !important;
+}
+
+#services {
+  padding-bottom: 6rem !important;
+  padding-top: 6rem !important;
+}
+
+.service-card {
+  background: #ffffff !important;
+  border: 1px solid var(--line) !important;
+  border-radius: 18px;
+  box-shadow: 0 16px 36px rgba(23, 32, 51, 0.08);
+  color: var(--ink) !important;
+  min-height: 430px;
+  overflow: hidden;
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.service-card:hover {
+  box-shadow: 0 22px 44px rgba(23, 32, 51, 0.14);
+  transform: translateY(-5px);
+}
+
+.service-card .card-body {
+  padding: 2.25rem 1.75rem;
+}
+
+.service-card .h1 {
+  color: var(--brand);
+  font-size: 2.8rem;
+}
+
+.service-card h3 {
+  color: var(--ink);
+  font-size: 1.45rem;
+}
+
+.service-card .card-text {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.service-card ul {
+  padding-left: 1.2rem;
+}
+
+#about {
+  padding-bottom: 6rem;
+  padding-top: 6rem;
+}
+
+#about img,
+#whatsetsusapart img {
+  border-radius: 20px;
+  box-shadow: 0 20px 45px rgba(23, 32, 51, 0.15);
+}
+
+#about .lead {
+  color: var(--brand-dark);
+  font-size: 1.14rem;
+  font-weight: 600;
+}
+
+#whatsetsusapart {
+  background: var(--night) !important;
+  background-image: linear-gradient(120deg, rgba(20, 110, 245, 0.2), transparent 55%) !important;
+}
+
+#team {
+  background: var(--brand) !important;
+  background-image: linear-gradient(135deg, rgba(17, 24, 39, 0.28), transparent 58%) !important;
+  padding-bottom: 6rem !important;
+  padding-top: 6rem !important;
+}
+
+.team-carousel {
+  padding: 0 3.5rem 3rem;
+}
+
+.team-card {
+  background: rgba(255, 255, 255, 0.97) !important;
+  border: 0;
+  border-radius: 18px;
+  box-shadow: 0 18px 38px rgba(17, 24, 39, 0.16);
+  height: 100%;
+}
+
+.team-card .card-body {
+  padding: 2rem 1.5rem;
+}
+
+.team-icon {
+  color: var(--brand);
+  font-size: 3.2rem;
+  line-height: 1;
+  margin-bottom: 1.25rem;
+}
+
+.team-card h3 {
+  color: var(--ink);
+  font-size: 1.35rem;
+}
+
+.team-card .card-text {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.team-carousel .carousel-control-prev,
+.team-carousel .carousel-control-next {
+  width: 3rem;
+}
+
+.team-carousel .carousel-control-prev-icon,
+.team-carousel .carousel-control-next-icon {
+  background-color: rgba(17, 24, 39, 0.7);
+  background-size: 55%;
+  border-radius: 50%;
+  height: 2.75rem;
+  width: 2.75rem;
+}
+
+.team-carousel .carousel-indicators {
+  bottom: 0;
+  margin-bottom: 0;
+}
+
+.team-carousel .carousel-indicators button {
+  background-color: rgba(255, 255, 255, 0.55);
+  border: 0;
+  border-radius: 999px;
+  height: 0.35rem;
+  margin: 0 0.25rem;
+  width: 2rem;
+}
+
+.team-carousel .carousel-indicators button.active {
+  background-color: #ffffff;
+}
+
+#questions {
+  padding-bottom: 6rem !important;
+  padding-top: 6rem !important;
+}
+
+.accordion-item {
+  background: #ffffff;
+  border: 1px solid var(--line) !important;
+  margin-bottom: 0.75rem;
+}
+
+.accordion-button {
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.accordion-button:not(.collapsed) {
+  background: #edf5ff;
+  box-shadow: none;
+  color: var(--brand-dark);
+}
+
+#contact {
+  border-top: 1px solid var(--line);
 }
 
 @media (min-width: 768px) {
@@ -15,30 +314,24 @@ html {
   }
 }
 
-:root {
-  --brand: #4945fe;
-  --brand-dark: #332fd0;
-}
+@media (max-width: 767.98px) {
+  body,
+  html {
+    padding-top: 190px;
+    scroll-padding-top: 190px;
+  }
 
-.bg-brand {
-  background-color: var(--brand) !important;
-}
+  .hero-section {
+    min-height: 360px;
+    padding-top: 3.5rem !important;
+  }
 
-.btn-brand {
-  background-color: var(--brand) !important;
-  border-color: var(--brand) !important;
-  color: #ffffff !important;
-}
+  .navbar .nav-link {
+    border-radius: 10px;
+  }
 
-.btn-brand:hover {
-  background-color: var(--brand-dark) !important;
-  border-color: var(--brand-dark) !important;
-}
-
-.text-brand {
-  color: var(--brand) !important;
-}
-
-.service-card {
-  min-height: 430px;
+  .team-carousel {
+    padding-left: 2.25rem;
+    padding-right: 2.25rem;
+  }
 }
