@@ -339,7 +339,7 @@ h2 {
   }
 
   .navbar-brand img {
-    height: 110px !important;
+    height: 90px !important;
     width: auto;
   }
 
@@ -424,12 +424,31 @@ h2 {
   }
 
   .team-carousel {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    touch-action: pan-y;
+  }
+
+  .team-carousel .carousel-item .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .team-carousel .carousel-item [class*="col-"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
   }
 
   .team-card .card-body {
-    padding: 1.75rem 1.25rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .team-card .card-text {
+    font-size: 0.86rem;
+    line-height: 1.55;
   }
 
   .team-carousel .carousel-control-prev,
